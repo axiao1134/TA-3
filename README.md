@@ -73,3 +73,7 @@ Evento - Atleta:
 
 Un atleta puede estar involucrado en uno o más eventos.
 Un evento puede involucrar a uno o más atletas.
+
+
+prompt:
+
