@@ -40,5 +40,12 @@ public class Equipo {
 		return info.toString();
 	}
 
-	// Puedes agregar getters y setters según sea necesario
+	public String getNombre() {
+		return nombre;
+	}
+
+	public List<Atleta> getAtletas() {
+		return atletas;
+	}
+
 }

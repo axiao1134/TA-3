@@ -48,5 +48,16 @@ public class Disciplina {
 		participantes.remove(atleta);  // Actualizar la lista de participantes
 	}
 
-	// Puedes agregar getters y setters según sea necesario
+	public String getNombre() {
+		return nombre;
+	}
+	public List<Atleta> getAtletas() {
+		return atletas;
+	}
+
+	public List<Atleta> getParticipantes() {
+		return participantes;
+	}
+
+
 }

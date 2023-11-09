@@ -54,5 +54,14 @@ public class Atleta {
 		equipos.remove(equipo);
 	}
 
-	// Puedes agregar getters y setters según sea necesario
+	public String getNombre() {
+		return nombre;
+	}
+	public List<Equipo> getEquipos() {
+		return equipos;
+	}
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+
 }

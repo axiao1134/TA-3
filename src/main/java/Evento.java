@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Evento {
@@ -34,5 +35,12 @@ public class Evento {
 		return info.toString();
 	}
 
-	// Puedes agregar getters y setters según sea necesario
+	public String getFecha() {
+		return fecha;
+	}
+	public List<Equipo> getEquipos() {
+		return equipos;
+	}
+
+
 }
