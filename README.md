@@ -73,3 +73,10 @@ Evento - Atleta:
 
 Un atleta puede estar involucrado en uno o más eventos.
 Un evento puede involucrar a uno o más atletas.
+
+
+prompt:
+
+ahora necesito que me ayudes a completar las clases , porqque el codigo es geenrado automaticamente por la aplicacion de diagrama de clase:
+
+ahora te mando lasclases uno por uno y me ayudas a competar alas clases:

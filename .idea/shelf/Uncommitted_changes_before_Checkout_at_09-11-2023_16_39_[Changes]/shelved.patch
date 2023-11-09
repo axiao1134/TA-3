@@ -1,0 +1,180 @@
+Index: src/test/java/DisciplinaTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/DisciplinaTest.java b/src/test/java/DisciplinaTest.java
+new file mode 100644
+--- /dev/null	(date 1699558411177)
++++ b/src/test/java/DisciplinaTest.java	(date 1699558411177)
+@@ -0,0 +1,45 @@
++import org.junit.Before;
++import org.junit.Test;
++import static org.junit.Assert.*;
++
++public class DisciplinaTest {
++
++    private Disciplina disciplina;
++
++    @Before
++    public void setUp() {
++        // Crear una nueva Disciplina para cada prueba
++        disciplina = new Disciplina("Natación", "Record Natación");
++    }
++
++    @Test
++    public void agregarAtleta() {
++        // Crear un atleta de prueba
++        Atleta atleta = new Atleta("Carlos", "Brasil", 28);
++
++        // Agregar el atleta a la disciplina
++        disciplina.agregarAtleta(atleta);
++
++        // Verificar que el atleta se haya agregado correctamente
++        assertTrue(disciplina.getAtletas().contains(atleta));
++        assertTrue(disciplina.getParticipantes().contains(atleta));
++    }
++
++    @Test
++    public void eliminarAtleta() {
++        // Crear un atleta de prueba
++        Atleta atleta = new Atleta("Ana", "España", 24);
++
++        // Agregar el atleta a la disciplina
++        disciplina.agregarAtleta(atleta);
++
++        // Eliminar el atleta de la disciplina
++        disciplina.eliminarAtleta(atleta);
++
++        // Verificar que el atleta se haya eliminado correctamente
++        assertFalse(disciplina.getAtletas().contains(atleta));
++        assertFalse(disciplina.getParticipantes().contains(atleta));
++    }
++
++    // Puedes continuar con pruebas para los demás métodos según tus necesidades.
++}
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Juegos Panamericanos - Registro de Atletas y Disciplinas\r\nDesarrollador\r\nNombre: Zihao Xiao\r\nDescripción General\r\nEste repositorio contiene una solución para el registro de atletas y disciplinas en el contexto de los Juegos Panamericanos. El sistema permite la gestión de atletas, disciplinas, equipos y eventos, manteniendo un control interno de los participantes y sus actividades.\r\n\r\nClases Principales\r\n1. Atleta\r\n   Atributos:\r\n\r\nnombre: String\r\npaís: String\r\nedad: int\r\ndisciplinas: List<Disciplina>\r\nMétodos:\r\n\r\nagregarDisciplina(d: Disciplina)\r\neliminarDisciplina(d: Disciplina)\r\nmostrarInformacion()\r\n2. Disciplina\r\n   Atributos:\r\n\r\nnombre: String\r\nnumParticipantes: int\r\nrecordMundial: String\r\nMétodos:\r\n\r\nmostrarInformacion()\r\n3. Equipo\r\n   Atributos:\r\n\r\nnombre: String\r\natletas: List<Atleta>\r\ndisciplina: Disciplina\r\nMétodos:\r\n\r\nagregarAtleta(a: Atleta)\r\neliminarAtleta(a: Atleta)\r\nmostrarInformacion()\r\n4. Evento\r\n   Atributos:\r\n\r\ndisciplina: Disciplina\r\nequipos: List<Equipo>\r\nfecha: Date\r\nMétodos:\r\n\r\nagregarAtletaEquipo(a: Atleta, e: Equipo)\r\neliminarAtletaEquipo(a: Atleta, e: Equipo)\r\nmostrarInformacion()\r\nRelaciones Principales\r\nAtleta - Disciplina:\r\n\r\nUn atleta puede utilizar una o más disciplinas.\r\nUna disciplina puede ser utilizada por muchos atletas.\r\nAtleta - Equipo:\r\n\r\nUn atleta puede ser parte de uno o más equipos.\r\nUn equipo se compone de uno o más atletas.\r\nDisciplina - Equipo:\r\n\r\nUn equipo está asociado a una disciplina específica.\r\nUna disciplina puede estar asociada a uno o más equipos.\r\nEvento - Disciplina:\r\n\r\nUn evento está asociado a una disciplina.\r\nUna disciplina puede estar asociada a uno o más eventos.\r\nEvento - Equipo:\r\n\r\nUn equipo puede estar involucrado en uno o más eventos.\r\nUn evento puede involucrar a uno o más equipos.\r\nEvento - Atleta:\r\n\r\nUn atleta puede estar involucrado en uno o más eventos.\r\nUn evento puede involucrar a uno o más atletas.\r\n\r\n\r\nprompt:\r\n\r\nahora necesito que me ayudes a completar las clases , porqque el codigo es geenrado automaticamente por la aplicacion de diagrama de clase:\r\n\r\nahora te mando lasclases uno por uno y me ayudas a competar alas clases:\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision c289dd8746e012570cd63b9f9d7cbe4bdaa93a65)
++++ b/README.md	(date 1699558163616)
+@@ -80,3 +80,7 @@
+ ahora necesito que me ayudes a completar las clases , porqque el codigo es geenrado automaticamente por la aplicacion de diagrama de clase:
+ 
+ ahora te mando lasclases uno por uno y me ayudas a competar alas clases:
++
++
++prompt2 :
++generame una prueba unitaria por metodo excepto el metodo getter
+\ No newline at end of file
+Index: src/test/java/EquipoTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/EquipoTest.java b/src/test/java/EquipoTest.java
+new file mode 100644
+--- /dev/null	(date 1699558563474)
++++ b/src/test/java/EquipoTest.java	(date 1699558563474)
+@@ -0,0 +1,43 @@
++import org.junit.Before;
++import org.junit.Test;
++import static org.junit.Assert.*;
++
++public class EquipoTest {
++
++    private Equipo equipo;
++
++    @Before
++    public void setUp() {
++        // Crear un nuevo Equipo para cada prueba
++        equipo = new Equipo("Equipo A", "Baloncesto");
++    }
++
++    @Test
++    public void agregarAtleta() {
++        // Crear un atleta de prueba
++        Atleta atleta = new Atleta("Carlos", "Argentina", 30);
++
++        // Agregar el atleta al equipo
++        equipo.agregarAtleta(atleta);
++
++        // Verificar que el atleta se haya agregado correctamente
++        assertTrue(equipo.getAtletas().contains(atleta));
++    }
++
++    @Test
++    public void eliminarAtleta() {
++        // Crear un atleta de prueba
++        Atleta atleta = new Atleta("Ana", "España", 25);
++
++        // Agregar el atleta al equipo
++        equipo.agregarAtleta(atleta);
++
++        // Eliminar el atleta del equipo
++        equipo.eliminarAtleta(atleta);
++
++        // Verificar que el atleta se haya eliminado correctamente
++        assertFalse(equipo.getAtletas().contains(atleta));
++    }
++
++    // Puedes continuar con pruebas para los demás métodos según tus necesidades.
++}
+Index: src/test/java/EventoTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/EventoTest.java b/src/test/java/EventoTest.java
+new file mode 100644
+--- /dev/null	(date 1699558665513)
++++ b/src/test/java/EventoTest.java	(date 1699558665513)
+@@ -0,0 +1,43 @@
++import org.junit.Before;
++import org.junit.Test;
++import static org.junit.Assert.*;
++
++public class EventoTest {
++
++    private Evento evento;
++
++    @Before
++    public void setUp() {
++        // Crear un nuevo Evento para cada prueba
++        evento = new Evento("Atletismo", "2023-11-10");
++    }
++
++    @Test
++    public void agregarEquipo() {
++        // Crear un equipo de prueba
++        Equipo equipo = new Equipo("Equipo X", "Atletismo");
++
++        // Agregar el equipo al evento
++        evento.agregarEquipo(equipo);
++
++        // Verificar que el equipo se haya agregado correctamente
++        assertTrue(evento.getEquipos().contains(equipo));
++    }
++
++    @Test
++    public void eliminarEquipo() {
++        // Crear un equipo de prueba
++        Equipo equipo = new Equipo("Equipo Y", "Natación");
++
++        // Agregar el equipo al evento
++        evento.agregarEquipo(equipo);
++
++        // Eliminar el equipo del evento
++        evento.eliminarEquipo(equipo);
++
++        // Verificar que el equipo se haya eliminado correctamente
++        assertFalse(evento.getEquipos().contains(equipo));
++    }
++
++    // Puedes continuar con pruebas para los demás métodos según tus necesidades.
++}
